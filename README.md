@@ -29,3 +29,9 @@ $ brew install sqlc
 ```shell
 $ go get github.com/lib/pq
 ```
+
+
+## testify install
+```shell
+$ go get github.com/stretchr/testify
+```
