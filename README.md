@@ -23,3 +23,9 @@ $ migrate -path database/migration -database "postgresql://root:secret@localhost
 $ brew install sqlc
 
 ```
+
+
+## for test on postgres
+```shell
+$ go get github.com/lib/pq
+```
