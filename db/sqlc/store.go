@@ -77,5 +77,5 @@ func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (Trans
 
 		return nil
 	})
-	return result, nil
+	return result, err
 }
