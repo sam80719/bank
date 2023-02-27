@@ -53,29 +53,27 @@ type TransferTxResult struct {
 func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
 	var result TransferTxResult
 
-	err := store.execTx(ctx, func(queries *Queries) error {
+	err := store.execTx(ctx, func(q *Queries) error {
 		var err error
 
-		result.Transfer, err = queries.CreateTransfer(ctx, CreateTransferParams{
+		result.Transfer, err = q.CreateTransfer(ctx, CreateTransferParams{
 			FromAccountID: arg.FromAccountID,
 			ToAccountID:   arg.ToAccountID,
 			Amount:        arg.Amount,
 		})
-
 		if err != nil {
 			return err
 		}
 
-		result.FromEntry, err = queries.CreateEntry(ctx, CreateEntryParams{
-			AccountID: arg.ToAccountID,
+		result.FromEntry, err = q.CreateEntry(ctx, CreateEntryParams{
+			AccountID: arg.FromAccountID,
 			Amount:    -arg.Amount,
 		})
-
 		if err != nil {
 			return err
 		}
 
-		result.ToEntry, err = queries.CreateEntry(ctx, CreateEntryParams{
+		result.ToEntry, err = q.CreateEntry(ctx, CreateEntryParams{
 			AccountID: arg.ToAccountID,
 			Amount:    arg.Amount,
 		})
@@ -83,7 +81,10 @@ func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (Trans
 			return err
 		}
 
-		return nil
+		// TODO: update accounts' balance
+
+		return err
 	})
+
 	return result, err
 }
