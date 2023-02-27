@@ -68,9 +68,17 @@ func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (Trans
 
 		result.FromEntry, err = queries.CreateEntry(ctx, CreateEntryParams{
 			AccountID: arg.ToAccountID,
-			Amount:    arg.Amount,
+			Amount:    -arg.Amount,
 		})
 
+		if err != nil {
+			return err
+		}
+
+		result.ToEntry, err = queries.CreateEntry(ctx, CreateEntryParams{
+			AccountID: arg.ToAccountID,
+			Amount:    arg.Amount,
+		})
 		if err != nil {
 			return err
 		}
