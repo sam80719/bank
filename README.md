@@ -35,3 +35,9 @@ $ go get github.com/lib/pq
 ```shell
 $ go get github.com/stretchr/testify
 ```
+
+
+## install gin
+```shell
+$ go get -u github.com/gin-gonic/gin
+```
