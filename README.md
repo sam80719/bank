@@ -46,3 +46,9 @@ $ go get -u github.com/gin-gonic/gin
 ```shell
 $ go get github.com/spf13/viper
 ```
+
+
+## install goMock
+```shell
+$ go install github.com/golang/mock/mockgen@v1.6.0
+```
