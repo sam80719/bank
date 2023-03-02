@@ -3,7 +3,7 @@ package db
 import (
 	"context"
 	"database/sql"
-	"github.com/sam80719/bank/db/util"
+	"github.com/sam80719/bank/util"
 	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
