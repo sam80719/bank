@@ -41,3 +41,8 @@ $ go get github.com/stretchr/testify
 ```shell
 $ go get -u github.com/gin-gonic/gin
 ```
+
+## install viper
+```shell
+$ go get github.com/spf13/viper
+```
