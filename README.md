@@ -10,10 +10,10 @@ $ docker stop postgres
 ```shell
 $ docker exec -it postgres /bin/sh
 $ brew install golang-migrate
-$ migrate create -ext sql -dir database/migration -seq ini_bank
-$ migrate -path database/migration -database "postgresql://root:secret@localhost:5432/simple_bank" -verbose up
+$ migrate create -ext sql -dir db/migration -seq ini_bank
+$ migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank" -verbose up
 # disable ssl
-$ migrate -path database/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+$ migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
 ```
 
