@@ -52,3 +52,15 @@ $ go get github.com/spf13/viper
 ```shell
 $ go install github.com/golang/mock/mockgen@v1.6.0
 ```
+
+
+## install uuid
+```shell
+$ go get github.com/google/uuid
+```
+
+
+## install jwt-go
+```shell
+$ go get github.com/dgrijalva/jwt-go
+```
