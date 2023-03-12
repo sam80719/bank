@@ -60,7 +60,13 @@ $ go get github.com/google/uuid
 ```
 
 
-## install jwt-go
+## install jwt-go (token)
 ```shell
 $ go get github.com/dgrijalva/jwt-go
+```
+
+
+## install paseto (token)
+```shell
+ go get github.com/o1egl/paseto
 ```
